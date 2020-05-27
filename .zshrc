@@ -108,11 +108,16 @@ alias java8="/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/b
 
 alias mvn='nocorrect mvn'
 
+alias setnvm="nvm use $(cat .nvmrc)"
+
 alias kprod="gcloud container clusters get-credentials main-cluster --zone europe-west1-b --project vivacity-infrastructure"
 alias kstaging="gcloud container clusters get-credentials staging-cluster --zone europe-west1-b --project vivacity-infrastructure"
 alias kdev="gcloud container clusters get-credentials dev-cluster --zone europe-west1-b --project vivacity-infrastructure"
 
 alias k8svpndev="sudo openvpn /Users/alexpainter/secrets/OpenVPN-client-alex.ovpn"
+alias k8svpnstaging="sudo openvpn /Users/alexpainter/secrets/OpenVPN-client-alex-staging.ovpn"
+alias k8svpnprod="sudo openvpn /Users/alexpainter/secrets/OpenVPN-client-alex-prod.ovpn"
+alias officevpn="sudo openvpn /Users/alexpainter/secrets/OpenVPN-client-alex-office.ovpn"
 
 alias d='dirs -v | head -10'
 alias 1='cd -'
@@ -139,7 +144,7 @@ if [ -f '/Users/alexpainter/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/alexpainter/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alexpainter/Documents/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
+export PATH="/usr/local/opt/terraform@0.12/bin:$PATH"
 
 # add kitty completion
 autoload -Uz compinit
